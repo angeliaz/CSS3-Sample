@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>cloud flying</title>
+	<style type="text/css">
+		body {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			margin: 0;
+			background: #fff;
+		}
+		.wrap {
+			width: 100%;
+			height: 1000px;
+			background: url(images/sky.jpg) top left no-repeat;
+			background-size: 100% 100%;
+		}
+		
+		@keyframes flying {
+			0% {
+				transform: translateX(-255px);
+			}
+			50% {
+				/*transform: translateX(500px) translateY(-50px);*/
+			}
+			100% {
+				transform: translateX(1400px) translateY(0px);
+			}
+		}
+
+		.cloud {
+			position: absolute;
+		}
+
+		.cloud1 {
+			top: 50px;
+			left: 400px;
+			/*display: none;*/
+			animation: flying 10s linear 0s infinite backwards;
+		}
+		.cloud2 {
+			top: 100px;
+			left: 100px;
+			animation: flying 10s linear 0s infinite backwards;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<img class="cloud1 cloud" src="images/cloud.png">
+		<img class="cloud2 cloud" src="images/cloud.png">
+		
+	</div>
+</body>
+</html>

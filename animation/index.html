@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div class="wrap">
+		<div id="buttons" class="buttons">
+			<input type="button" id="drive" value="开车">
+			<input type="button" id="roll" value="滚动">
+			<input type="button" id="empty" value="清空动画">
+		</div>
+		<div class="samples">
+			<img id="car" src="images/car.png">
+			<br>
+			<img id="ball" src="images/ball.png">
+			<div class="walker"></div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+
+		(function (win, doc) {
+
+			var $ = function (id) {
+				return doc.getElementById(id);
+			};
+			 
+
+
+			var Fn = {
+
+				init: function () {
+					this.bindEvent();
+				},
+
+				bindEvent: function () {
+					var _this = this;
+					$('drive').addEventListener('click', _this.addDrive);
+					$('roll').addEventListener('click', _this.addRoll);
+					$('empty').addEventListener('click', function () {
+						$('car').classList.remove('car');
+						$('ball').classList.remove('ball');
+					});
+				},
+
+				addDrive: function () {
+					$('car').classList.add('car');
+				},
+
+				addRoll: function () {
+					$('ball').classList.add('ball');
+				},
+
+
+
+			};
+
+			Fn.init();
+
+		})(window, document);
+
+	</script>
+</body>
+</html>
